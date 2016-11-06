@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		canvas#chart1 {
+			border: 1px solid #000;
+			display: block;
+			margin: 20px auto;
+			width: 800px;
+			height: auto;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="chart1">
+	</canvas>
+<script src="barChart.js"></script>
+<script>
+/*
+* t : time 已过时间
+* b : begin 起始值
+* c : count 总的运动值
+* d : duration 持续时间
+*/
+
+var data = {
+	legend: {
+		text: "输出伤害",
+		color: "#f08080"
+	},
+	itemsX: [ "上单","打野","中单","辅助","ADC","对面","野怪"],
+	itemsY: [ 0, 10000, 20000, 30000, 40000, 50000,60000,70000],
+	data: [ 16423,25301,39591,10200,48214,35345,22572],
+	
+};
+
+window.onload = function() {
+	var c = new Chart(document.querySelector("#chart1"));
+	c.init(data);
+};
+
+
+</script>
+</body>
+</html>
