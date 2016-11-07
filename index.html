@@ -11,35 +11,80 @@
 			width: 800px;
 			height: auto;
 		}
+		div { 
+			position: fixed;
+			top: 100px;
+			left: 100px;}
 	</style>
 </head>
 <body>
 	<canvas id="chart1">
 	</canvas>
+	
 <script src="barChart.js"></script>
 <script>
-/*
-* t : time 已过时间
-* b : begin 起始值
-* c : count 总的运动值
-* d : duration 持续时间
-*/
 
 var data = {
-	legend: {
-		text: "输出伤害",
-		color: "#f08080"
+	title: {
+		text: "战队数据分析",
 	},
-	itemsX: [ "上单","打野","中单","辅助","ADC","对面","野怪"],
+	itemsX: [ "上单","打野","中单","辅助","ADC"],
 	itemsY: [ 0, 10000, 20000, 30000, 40000, 50000,60000,70000],
-	data: [ 16423,25301,39591,10200,48214,35345,22572],
-	
+	series: [
+		{
+			legend: "对普通野怪造成的伤害",
+			color: "#afeeee",
+			data: [30423,65301,59591,25200,68214]
+		},
+		{
+			legend: "对英雄造成的伤害",
+			color: "#87cefa",
+			data: [16423,45301,49591,10200,58214]
+		},
+		{
+			legend: "对史诗野怪造成的伤害",
+			color: "#00bfff",
+			data: [12000,30024,39591,8000,50020]
+		}
+	]
 };
 
-window.onload = function() {
-	var c = new Chart(document.querySelector("#chart1"));
-	c.init(data);
+
+var data2 = {
+	title: {
+		text: "战队数据分析",
+	},
+	itemsX: [ "上单","打野","中单","辅助","ADC"],
+	itemsY: [ 0, 10000, 20000, 30000, 40000, 50000,60000,70000],
+	series: [
+		{
+			legend: "对普通野怪造成的伤害",
+			color: "#afeeee",
+			data: [20423,55301,39591,15200,58214]
+		},
+		{
+			legend: "对英雄造成的伤害",
+			color: "#87cefa",
+			data: [16423,45301,32591,13200,48214]
+		},
+		{
+			legend: "对史诗野怪造成的伤害",
+			color: "#00bfff",
+			data: [8000,30024,19591,4200,38020]
+		}
+	]
 };
+
+
+
+var c = new Chart(document.querySelector("#chart1"));
+c.init(data);
+		 
+
+setTimeout(function() {
+	cancelAnimationFrame(c.animationId);
+	c.uploadData(data2);
+},10000);
 
 
 </script>
