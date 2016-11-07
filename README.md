@@ -41,7 +41,7 @@
 	
 这样我们就在页面中生成了一个 条形图，目前暴露出来的接口有限。
 
-动画效果借助 `tween算法` 实现，动画采用了`requestAnimationFrame`方案，对于不支持的浏览器不做兼容，可自行使用 `polyfill`降级
+动画效果借助 `tween算法` 实现，动画采用了`requestAnimationFrame`方案，对于不支持的浏览器不做兼容，可自行使用 `polyfill方案`降级
 
 
 
