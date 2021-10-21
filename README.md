@@ -2,9 +2,9 @@
 
 ### 说明
 
-> 在线地址 <https://wonderff.github.io/myChart/>
-
-这是一个原生的基于canvas的绘制图表的插件，这个插件功能比较简陋，只能生成简单的条形图，配置项参数也很少，来看这个数据
+> 在线地址 <https://wildfire0304.github.io/Bar-Chart/>
+> 
+原生的基于canvas的绘制图表的插件，这个插件功能比较简陋，只能生成简单的条形图，配置项参数也很少，来看这个数据
 
 	var data = {
 		title: {
@@ -42,6 +42,4 @@
 这样我们就在页面中生成了一个 条形图，目前暴露出来的接口有限。
 
 动画效果借助 `tween算法` 实现，动画采用了`requestAnimationFrame`方案，对于不支持的浏览器不做兼容，可自行使用 `polyfill方案`降级
-
-
 
